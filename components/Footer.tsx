@@ -80,9 +80,9 @@ const Footer = () => {
           <p className="text-sm text-gray-500">
             © 2026{" "}
             <Link href={"/"} className="text-black hover:text-gray-500">
-              dev<span className="text-red-500">.</span>pen
+              dev<span className="text-red-500">.</span>pen.
             </Link>{" "}
-            Codersink. All rights reserved.
+            All rights reserved.
           </p>
 
           <div className="flex gap-5">
