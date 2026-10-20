@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 export default function Button() {
   return (
     <Link
-      href="/login"
+      href="/authform"
       className="group inline-flex items-center justify-center gap-2
         rounded-full border border-black/15 px-5 py-2
         text-sm font-medium text-black
