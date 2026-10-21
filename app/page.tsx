@@ -1,7 +1,13 @@
+import FeaturePost from "@/components/FeaturePost";
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
     <>
-      <main>Home</main>
+      <main>
+        <Hero />
+        <FeaturePost />
+      </main>
     </>
   );
 }

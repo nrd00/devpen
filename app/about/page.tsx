@@ -5,7 +5,6 @@ import {
   ArrowRight,
   BookOpen,
   Feather,
-  Globe2,
   Heart,
   Lightbulb,
   PenLine,
@@ -50,7 +49,7 @@ const page = () => {
   return (
     <main className="overflow-hidden bg-white text-[#171717]">
       {/* Hero */}
-      <section className="mx-auto max-w-7xl px-5 pb-20 pt-20 sm:px-8 sm:pb-28 sm:pt-28 lg:pb-32 lg:pt-36">
+      <section className="mx-auto max-w-7xl px-5 pb-20 pt-14 sm:px-8 sm:pb-18 sm:pt-28 lg:pb-20 lg:pt-20">
         <div className="grid items-end gap-12 lg:grid-cols-[1.3fr_0.7fr]">
           <div>
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-xs font-medium tracking-wide text-gray-600">
