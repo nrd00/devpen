@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { AuthProvider } from "./context/AuthContext";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -18,9 +19,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`  h-full antialiased`}>
       <body className={`min-h-full flex flex-col ${roboto.className}`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

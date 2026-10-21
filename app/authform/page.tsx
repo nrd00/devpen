@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAuth } from "../context/AuthContext";
 import {
   ArrowRight,
   BookOpen,
@@ -16,6 +18,9 @@ import {
 const modes = ["Login", "Sign Up", "Reset Password"];
 
 export default function AuthForm() {
+  const router = useRouter();
+  const { login } = useAuth();
+
   const [mode, setMode] = useState("Login");
   const [showPassword, setShowPassword] = useState(false);
   const [remember, setRemember] = useState(true);
@@ -24,6 +29,10 @@ export default function AuthForm() {
   const isSignup = mode === "Sign Up";
   const isReset = mode === "Reset Password";
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
   function changeMode(nextMode: string) {
     setMode(nextMode);
     setShowPassword(false);
@@ -31,7 +40,16 @@ export default function AuthForm() {
 
   function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
-    // Connect your authentication logic here later.
+    setError("");
+
+    const success = login(email.trim(), password);
+
+    if (success) {
+      alert("Login successful!");
+      router.replace("/admin");
+    } else {
+      setError("Invalid email or password.");
+    }
   }
 
   return (
@@ -192,6 +210,8 @@ export default function AuthForm() {
                   autoComplete="email"
                   placeholder="you@example.com"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full bg-transparent py-3.5 text-sm outline-none placeholder:text-gray-400"
                 />
               </div>
@@ -225,6 +245,8 @@ export default function AuthForm() {
                     minLength={8}
                     required
                     className="w-full bg-transparent py-3.5 text-sm outline-none placeholder:text-gray-400"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
 
                   <button
@@ -275,6 +297,12 @@ export default function AuthForm() {
                   Privacy Policy
                 </Link>
                 .
+              </p>
+            )}
+
+            {error && (
+              <p role="alert" className="text-sm text-red-600">
+                {error}
               </p>
             )}
 

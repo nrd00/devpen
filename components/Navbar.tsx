@@ -13,6 +13,8 @@ import {
   Timeline,
 } from "lucide-react";
 import Button from "./Button";
+import AccountMenu from "./ProfileMenu";
+import { useAuth } from "@/app/context/AuthContext";
 
 const navItems = [
   { name: "Home", href: "/", Icon: House },
@@ -24,6 +26,8 @@ const navItems = [
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  const { isLoggedIn, isReady } = useAuth();
 
   const isActive = (href: string) =>
     pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
@@ -77,7 +81,7 @@ export default function Navbar() {
             );
           })}
 
-          <Button />
+          {isReady && (isLoggedIn ? <AccountMenu /> : <Button />)}
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -99,7 +103,7 @@ export default function Navbar() {
         {/* Mobile Dropdown */}
         <div
           id="mobile-navigation"
-          className={`absolute left-0 right-0 top-full overflow-hidden border-b border-black/5 bg-white/95 shadow-lg shadow-black/5 backdrop-blur-xl transition-all duration-300 sm:hidden ${
+          className={`absolute left-0 right-0 top-full overflow-visible border-b border-black/5 bg-white/95 shadow-lg shadow-black/5 backdrop-blur-xl transition-all duration-300 sm:hidden ${
             isOpen
               ? "visible translate-y-0 opacity-100"
               : "invisible -translate-y-2 opacity-0 pointer-events-none"
@@ -139,8 +143,8 @@ export default function Navbar() {
               );
             })}
           </div>
-          <div className="pb-4 px-5">
-            <Button />
+          <div className="pb-4 px-5 ">
+            {isReady && (isLoggedIn ? <AccountMenu /> : <Button />)}
           </div>
         </div>
       </nav>
