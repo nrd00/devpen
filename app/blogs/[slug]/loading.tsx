@@ -1,3 +1,5 @@
+"use client";
+
 import { BookOpen, Sparkles } from "lucide-react";
 
 type LoadingProps = {
