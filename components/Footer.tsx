@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { SquareCode } from "lucide-react";
+import Image from "next/image";
+import Logo from "/assets/logo.png";
 
 const footerLinks = [
   { name: "Home", href: "/" },
@@ -21,9 +22,7 @@ const Footer = () => {
               href="/"
               className="shrink-0 text-2xl font-medium tracking-tight text-black sm:text-3xl hover:text-gray-500"
             >
-              dev
-              <span className="text-red-500 text-5xl">.</span>
-              <span>pen</span>
+              <Image src={Logo} alt="Company Logo" className="h-8 w-auto" />
             </Link>
 
             <p className="mt-4 text-sm leading-6 text-gray-500">

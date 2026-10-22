@@ -15,6 +15,8 @@ import {
 import Button from "./Button";
 import AccountMenu from "./ProfileMenu";
 import { useAuth } from "@/app/context/AuthContext";
+import Image from "next/image";
+import Logo from "/assets/logo.png";
 
 const navItems = [
   { name: "Home", href: "/", Icon: House },
@@ -44,9 +46,7 @@ export default function Navbar() {
           onClick={() => setIsOpen(false)}
           className="shrink-0 text-2xl font-medium tracking-tight text-black sm:text-3xl hover:text-gray-500"
         >
-          dev
-          <span className="text-red-500 text-5xl">.</span>
-          <span>pen</span>
+          <Image src={Logo} alt="Company Logo" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
