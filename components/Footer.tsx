@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "/assets/logo.png";
+import { CiLinkedin } from "react-icons/ci";
+import { CiFacebook } from "react-icons/ci";
+import { CiInstagram } from "react-icons/ci";
+import { FaGithub } from "react-icons/fa";
 
 const footerLinks = [
   { name: "Home", href: "/" },
@@ -51,23 +55,42 @@ const Footer = () => {
 
           {/* Account links */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900">Account</h3>
+            <h3 className="text-sm font-semibold text-gray-900">Social</h3>
 
             <ul className="mt-4 space-y-3">
               <li>
                 <Link
-                  href="/login"
-                  className="text-sm text-gray-500 transition hover:text-gray-700"
+                  href=""
+                  className="text-3xl text-gray-500 transition hover:text-gray-700"
                 >
-                  Login
+                  <FaGithub />
+                  
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/signup"
-                  className="text-sm text-gray-500 transition hover:text-gray-700"
+                  href=""
+                  className="text-3xl text-gray-500 transition hover:text-gray-700"
                 >
-                  Create an account
+                  <CiInstagram />
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href=""
+                  className="text-3xl text-gray-500 transition hover:text-gray-700"
+                >
+                  <CiFacebook />
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href=""
+                  className="text-3xl text-gray-500 transition hover:text-gray-700"
+                >
+                  <CiLinkedin />
                 </Link>
               </li>
             </ul>

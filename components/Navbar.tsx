@@ -41,13 +41,12 @@ export default function Navbar() {
         aria-label="Main navigation"
       >
         {/* Logo */}
-        <Link
-          href="/"
+        <a
           onClick={() => setIsOpen(false)}
           className="shrink-0 text-2xl font-medium tracking-tight text-black sm:text-3xl hover:text-gray-500"
         >
           <Image src={Logo} alt="Company Logo" className="h-10 w-auto" />
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-6 sm:flex md:gap-9">
