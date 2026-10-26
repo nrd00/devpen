@@ -80,7 +80,7 @@ export default function NotFound() {
             </Link>
 
             <Link
-              href="/blog"
+              href="/blogs"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-6 py-3.5 text-sm font-medium text-[#171717] transition hover:border-gray-400 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2"
             >
               <BookOpen size={17} />

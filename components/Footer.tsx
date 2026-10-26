@@ -58,39 +58,19 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-gray-900">Social</h3>
 
             <ul className="mt-4 space-y-3">
-              <li>
-                <Link
-                  href=""
-                  className="text-3xl text-gray-500 transition hover:text-gray-700"
-                >
-                  <FaGithub />
-                </Link>
+              <li className="text-3xl text-gray-500 transition hover:text-gray-700">
+                <FaGithub />
               </li>
-              <li>
-                <Link
-                  href=""
-                  className="text-3xl text-gray-500 transition hover:text-gray-700"
-                >
-                  <CiInstagram />
-                </Link>
+              <li className="text-3xl text-gray-500 transition hover:text-gray-700">
+                <CiInstagram />
               </li>
 
-              <li>
-                <Link
-                  href=""
-                  className="text-3xl text-gray-500 transition hover:text-gray-700"
-                >
-                  <CiFacebook />
-                </Link>
+              <li className="text-3xl text-gray-500 transition hover:text-gray-700">
+                <CiFacebook />
               </li>
 
-              <li>
-                <Link
-                  href=""
-                  className="text-3xl text-gray-500 transition hover:text-gray-700"
-                >
-                  <CiLinkedin />
-                </Link>
+              <li className="text-3xl text-gray-500 transition hover:text-gray-700">
+                <CiLinkedin />
               </li>
             </ul>
           </div>
