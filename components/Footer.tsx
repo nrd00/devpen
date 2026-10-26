@@ -64,7 +64,6 @@ const Footer = () => {
                   className="text-3xl text-gray-500 transition hover:text-gray-700"
                 >
                   <FaGithub />
-                  
                 </Link>
               </li>
               <li>
